@@ -1,0 +1,277 @@
+.hero {
+    min-height: 100vh;
+    padding: 180px 0 120px 0;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.textContent {
+    text-align: left;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: rgba(14, 165, 164, 0.05);
+    border: 1px solid rgba(14, 165, 164, 0.1);
+    border-radius: 100px;
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: clamp(3.5rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    color: var(--foreground);
+    margin-bottom: 2rem;
+    letter-spacing: -0.04em;
+}
+
+.title span {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 3.5rem;
+    max-width: 600px;
+}
+
+.actions {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.primaryBtn {
+    position: relative;
+    padding: 1.2rem 2.6rem;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 18px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    box-shadow: 0 20px 40px -10px rgba(14, 165, 164, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primaryBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 50px -10px rgba(14, 165, 164, 0.4);
+}
+
+.pulse {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0;
+}
+
+.secondaryBtn {
+    padding: 1.2rem 2.6rem;
+    background: white;
+    color: var(--foreground);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 18px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    transition: all 0.3s ease;
+}
+
+.secondaryBtn:hover {
+    background: #f8fafc;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.visualContent {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.illustration {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1;
+    z-index: 2;
+}
+
+.insightCard {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 1.25rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.1s ease-out;
+}
+
+.cardTop {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--foreground);
+}
+
+.cardIcon {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardValue {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.focusPattern {
+    top: 10%;
+    left: 0;
+    width: 220px;
+}
+
+.appSwitch {
+    top: 50%;
+    right: -5%;
+    width: 200px;
+}
+
+.attentionScore {
+    bottom: 5%;
+    left: 15%;
+    width: 240px;
+}
+
+.miniChart {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 30px;
+}
+
+.bar {
+    flex: 1;
+    border-radius: 2px;
+    background: var(--primary);
+    opacity: 0.5;
+}
+
+.activeBar {
+    opacity: 1;
+    background: var(--accent);
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 6rem;
+    }
+
+    .textContent {
+        text-align: center;
+    }
+
+    .subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .actions {
+        justify-content: center;
+    }
+
+    .illustration {
+        height: 400px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding-top: 140px;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .primaryBtn,
+    .secondaryBtn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .focusPattern {
+        width: 180px;
+        top: 0;
+    }
+
+    .appSwitch {
+        width: 160px;
+        right: 0;
+    }
+
+    .attentionScore {
+        width: 200px;
+        bottom: 0;
+    }
+}
